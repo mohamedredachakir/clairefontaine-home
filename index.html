@@ -46,6 +46,7 @@ header {
 }
 .header-main {
   display: flex;
+  flex-wrap: nowrap;
   justify-content: space-between;
   padding: 30px 40px;
   border-bottom: 1px solid #eee;
@@ -125,28 +126,31 @@ header {
   margin-left: 20px;
 }
 .header-center {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .main-nav {
   display: flex;
-  gap: 35px;
+  flex-wrap: nowrap;
+  gap: 20px;
   align-items: center;
 }
 .main-nav a {
   text-decoration: none;
   color: var(--text-dark);
-  font-family: 'Caveat', cursive;
-  font-weight: 700;
-  font-size: 26px;
-  letter-spacing: 0.5px;
+  font-family: 'Jost', sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  white-space: nowrap;
   position: relative;
   padding-bottom: 6px;
   transition: all 0.3s ease;
 }
 .header-main.shrink .main-nav a {
-  font-size: 22px;
+  font-size: 16px;
 }
 .main-nav a::after {
   content: '';
@@ -193,10 +197,11 @@ header {
 .secondary-nav a {
   text-decoration: none;
   color: #666;
-  font-family: 'Caveat', cursive;
-  font-weight: 700;
-  font-size: 22px;
-  letter-spacing: 0.5px;
+  font-family: 'Jost', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
   transition: all 0.3s ease;
   position: relative;
 }
@@ -231,30 +236,54 @@ header {
   text-align: center;
   color: white;
   z-index: 10;
-  background: none;
-  padding: 50px;
   width: 90%;
   max-width: 1000px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
 }
 .hero-overlay-content h1 {
   font-family: 'Futura', Helvetica, Arial, sans-serif;
   font-weight: 900;
   font-size: 72px;
-  margin-bottom: 10px;
   text-transform: uppercase;
   letter-spacing: 3px;
   color: white;
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
   white-space: nowrap;
+  padding: 10px 40px;
+  position: relative;
+  z-index: 1;
+}
+.hero-overlay-content h1::before {
+  content: '';
+  position: absolute;
+  top: -5px; left: -15px; right: -15px; bottom: -5px;
+  background: rgba(55, 66, 150, 0.85); /* var(--primary-blue) */
+  filter: url(#brush-edge);
+  transform: rotate(-2.5deg);
+  z-index: -1;
 }
 .hero-overlay-content h2 {
   font-family: 'Caveat', cursive;
   font-size: 78px;
   font-weight: 700;
-  margin-bottom: 30px;
   line-height: 1.1;
   color: white;
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+  padding: 15px 50px;
+  position: relative;
+  z-index: 1;
+}
+.hero-overlay-content h2::before {
+  content: '';
+  position: absolute;
+  top: -5px; left: -20px; right: -20px; bottom: -5px;
+  background: rgba(230, 230, 230, 0.25); /* var(--bg-gray) */
+  filter: url(#brush-edge);
+  transform: rotate(1.5deg);
+  z-index: -1;
 }
 .hero-overlay-content p {
   font-family: 'Futura', Helvetica, Arial, sans-serif;
@@ -262,7 +291,19 @@ header {
   line-height: 1.5;
   font-weight: 900;
   color: white;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+  padding: 15px 40px;
+  position: relative;
+  z-index: 1;
+}
+.hero-overlay-content p::before {
+  content: '';
+  position: absolute;
+  top: -5px; left: -15px; right: -15px; bottom: -5px;
+  background: rgba(55, 66, 150, 0.85); /* var(--primary-blue) */
+  filter: url(#brush-edge);
+  transform: rotate(-1.5deg);
+  z-index: -1;
 }
 .slider-wrapper {
   width: 100%;
@@ -739,6 +780,13 @@ footer {
 </style>
 </head>
 <body>
+  <!-- SVG Filter for Brush Stroke Effect -->
+  <svg style="width:0; height:0; position:absolute;" aria-hidden="true" focusable="false">
+    <filter id="brush-edge">
+      <feTurbulence type="fractalNoise" baseFrequency="0.04" numOctaves="3" result="noise" />
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="15" xChannelSelector="R" yChannelSelector="G" />
+    </filter>
+  </svg>
 
 <header>
   <div class="header-main" id="header-main">
