@@ -573,19 +573,53 @@ header {
   margin-top: -20px;
   margin-bottom: 30px;
 }
-.brands-row {
+.brands-slider-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  margin-top: 40px;
+  background: transparent;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 40px;
-  flex-wrap: wrap;
-  margin-top: 20px;
 }
-.brands-row span {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 800;
-  font-size: 32px;
-  color: #444;
+.brands-slider-container::before,
+.brands-slider-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 150px;
+  height: 100%;
+  z-index: 2;
+}
+.brands-slider-container::before {
+  left: 0;
+  background: linear-gradient(to right, #fcfcfc 0%, rgba(252,252,252,0) 100%);
+}
+.brands-slider-container::after {
+  right: 0;
+  background: linear-gradient(to left, #fcfcfc 0%, rgba(252,252,252,0) 100%);
+}
+.brands-track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+  animation: scroll-brands 40s linear infinite;
+}
+.brands-track:hover {
+  animation-play-state: paused;
+}
+.brands-track img {
+  height: 120px;
+  width: 250px;
+  margin: 0 40px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+.brands-track img:hover {
+  transform: scale(1.1);
+}
+@keyframes scroll-brands {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
 /* FOOTER */
@@ -799,7 +833,7 @@ footer {
       <nav class="secondary-nav">
         <a href="#">Nous découvrir</a>
         <a href="#">Le blog</a>
-        <a href="#">Contacts</a>
+        <a href="#">Contact</a>
       </nav>
       <a href="#" class="icon-circle icon-fr"></a>
       <div class="search-container">
@@ -933,12 +967,43 @@ footer {
   
   <div class="section-marques-bottom">
     <div class="nos-marques-title">Nos autres <span>MARQUES</span></div>
-    <div class="brands-row">
-      <span>G. LALO</span>
-      <span>maildor</span>
-      <span>MARBEL</span>
-      <span>Mandarine</span>
-      <span>Plastiline</span>
+    <div class="brands-slider-container">
+      <div class="brands-track">
+        <!-- Original Set -->
+        <img src="logos-page/BLOCKX_logo-NOIR.svg" alt="Blockx">
+        <img src="logos-page/CERNT-logo.svg" alt="Cernt">
+        <img src="logos-page/Calligraphe.svg" alt="Calligraphe">
+        <img src="logos-page/DARWI-LOGO-SIMPLE-NOIR.svg" alt="Darwi">
+        <img src="logos-page/G.Lalo-LOGO-.svg" alt="G. Lalo">
+        <img src="logos-page/LOGO-BRAUSE.svg" alt="Brause">
+        <img src="logos-page/LOGO-Decopatch.svg" alt="Decopatch">
+        <img src="logos-page/LOGO-Eurowrap.svg" alt="Eurowrap">
+        <img src="logos-page/LOGO-Hupont.svg" alt="Hupont">
+        <img src="logos-page/MYMANDARINE_LOGO_CMJN_zone-protection_.svg" alt="Mymandarine">
+        <img src="logos-page/Marbel.svg" alt="Marbel">
+        <img src="logos-page/Pollen-logo.svg" alt="Pollen">
+        <img src="logos-page/Rhodia.svg" alt="Rhodia">
+        <img src="logos-page/Stillman.svg" alt="Stillman">
+        <img src="logos-page/logo JACQUESHERBIN PRESTIGE.svg" alt="Jacques Herbin">
+        <img src="logos-page/logo plasteline.svg" alt="Plasteline">
+        <!-- Duplicate Set for Seamless Loop -->
+        <img src="logos-page/BLOCKX_logo-NOIR.svg" alt="Blockx">
+        <img src="logos-page/CERNT-logo.svg" alt="Cernt">
+        <img src="logos-page/Calligraphe.svg" alt="Calligraphe">
+        <img src="logos-page/DARWI-LOGO-SIMPLE-NOIR.svg" alt="Darwi">
+        <img src="logos-page/G.Lalo-LOGO-.svg" alt="G. Lalo">
+        <img src="logos-page/LOGO-BRAUSE.svg" alt="Brause">
+        <img src="logos-page/LOGO-Decopatch.svg" alt="Decopatch">
+        <img src="logos-page/LOGO-Eurowrap.svg" alt="Eurowrap">
+        <img src="logos-page/LOGO-Hupont.svg" alt="Hupont">
+        <img src="logos-page/MYMANDARINE_LOGO_CMJN_zone-protection_.svg" alt="Mymandarine">
+        <img src="logos-page/Marbel.svg" alt="Marbel">
+        <img src="logos-page/Pollen-logo.svg" alt="Pollen">
+        <img src="logos-page/Rhodia.svg" alt="Rhodia">
+        <img src="logos-page/Stillman.svg" alt="Stillman">
+        <img src="logos-page/logo JACQUESHERBIN PRESTIGE.svg" alt="Jacques Herbin">
+        <img src="logos-page/logo plasteline.svg" alt="Plasteline">
+      </div>
     </div>
   </div>
 </section>
