@@ -252,18 +252,9 @@ header {
   color: white;
   text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
   white-space: nowrap;
-  padding: 10px 40px;
-  position: relative;
-  z-index: 1;
-}
-.hero-overlay-content h1::before {
-  content: '';
-  position: absolute;
-  top: -5px; left: -15px; right: -15px; bottom: -5px;
+  padding: 15px 40px;
   background: rgba(55, 66, 150, 0.85); /* var(--primary-blue) */
-  filter: url(#brush-edge);
-  transform: rotate(-2.5deg);
-  z-index: -1;
+  border-radius: 8px;
 }
 .hero-overlay-content h2 {
   font-family: 'Caveat', cursive;
@@ -273,17 +264,8 @@ header {
   color: white;
   text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
   padding: 15px 50px;
-  position: relative;
-  z-index: 1;
-}
-.hero-overlay-content h2::before {
-  content: '';
-  position: absolute;
-  top: -5px; left: -20px; right: -20px; bottom: -5px;
   background: rgba(230, 230, 230, 0.25); /* var(--bg-gray) */
-  filter: url(#brush-edge);
-  transform: rotate(1.5deg);
-  z-index: -1;
+  border-radius: 8px;
 }
 .hero-overlay-content p {
   font-family: 'Futura', Helvetica, Arial, sans-serif;
@@ -293,17 +275,8 @@ header {
   color: white;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
   padding: 15px 40px;
-  position: relative;
-  z-index: 1;
-}
-.hero-overlay-content p::before {
-  content: '';
-  position: absolute;
-  top: -5px; left: -15px; right: -15px; bottom: -5px;
   background: rgba(55, 66, 150, 0.85); /* var(--primary-blue) */
-  filter: url(#brush-edge);
-  transform: rotate(-1.5deg);
-  z-index: -1;
+  border-radius: 8px;
 }
 .slider-wrapper {
   width: 100%;
@@ -363,7 +336,7 @@ header {
   font-weight: 700;
   line-height: 1;
 }
-.block-text h2, .block-text .block-desc { color: var(--primary-blue); }
+.block-text h2 { color: var(--primary-blue); }
 
 .block-desc {
   font-family: 'Jost', sans-serif;
@@ -371,6 +344,7 @@ header {
   line-height: 1.6;
   margin-bottom: 40px;
   font-weight: 600;
+  color: #333;
 }
 .btn-block {
   background-color: var(--primary-blue);
@@ -390,6 +364,23 @@ header {
 .btn-block:hover {
   background-color: var(--dark-blue);
 }
+
+/* Univers Couleurs Spécifiques */
+.text-papeterie h2 { color: #3B4097; }
+.btn-papeterie { background-color: #3B4097; }
+.btn-papeterie:hover { filter: brightness(0.85); background-color: #3B4097; }
+
+.text-beauxarts h2 { color: #FF2D16; }
+.btn-beauxarts { background-color: #FF2D16; }
+.btn-beauxarts:hover { filter: brightness(0.85); background-color: #FF2D16; }
+
+.text-loisirs h2 { color: #FE9AAB; }
+.btn-loisirs { background-color: #FE9AAB; }
+.btn-loisirs:hover { filter: brightness(0.85); background-color: #FE9AAB; }
+
+.text-emballage h2 { color: #4FC6B0; }
+.btn-emballage { background-color: #4FC6B0; }
+.btn-emballage:hover { filter: brightness(0.85); background-color: #4FC6B0; }
 
 /* ACTUALITE */
 .actualite-section {
@@ -755,7 +746,7 @@ footer {
   font-family: 'Jost', sans-serif;
   font-weight: 500;
   font-size: 16px;
-  color: #666;
+  color: #333;
   line-height: 1.7;
   margin-bottom: 25px;
 }
@@ -851,7 +842,7 @@ footer {
         <p class="block-desc">Une sélection experte de papiers pour toutes les techniques : sèches, humides ou mixtes. Exprimez votre créativité avec des supports dédiés à l'aquarelle, au pastel, au dessin ou au carnet de voyage.</p>
         <a href="#" class="btn-block btn-beauxarts">Découvrir</a>
       </div>
-      <div class="block-image"><img src="univers/beauxart.jpg" alt="Beaux-arts"></div>
+      <div class="block-image"><img src="univers/image008.jpg" alt="Beaux-arts"></div>
     </div>
 
     <!-- Row 3 -->
