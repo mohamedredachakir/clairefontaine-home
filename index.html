@@ -24,13 +24,16 @@ body {
   font-family: 'Jost', sans-serif;
   color: var(--text-dark);
   background-color: #fff;
+  padding-top: 111px;
 }
 
 /* HEADER */
 header {
   display: flex;
   flex-direction: column;
-  position: sticky;
+  position: fixed;
+  width: 100%;
+  left: 0;
   top: 0;
   z-index: 1000;
   background: white;
@@ -378,6 +381,10 @@ header {
 .text-loisirs h2 { color: #FE9AAB; }
 .btn-loisirs { background-color: #FE9AAB; }
 .btn-loisirs:hover { filter: brightness(0.85); background-color: #FE9AAB; }
+
+.text-collections h2 { color: #8E44AD; }
+.btn-collections { background-color: #8E44AD; }
+.btn-collections:hover { filter: brightness(0.85); background-color: #8E44AD; }
 
 .text-emballage h2 { color: #4FC6B0; }
 .btn-emballage { background-color: #4FC6B0; }
@@ -892,12 +899,22 @@ footer {
 
     <!-- Row 4 -->
     <div class="block-row">
+      <div class="block-text text-collections">
+        <h2>Les collections</h2>
+        <p class="block-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor.</p>
+        <a href="#" class="btn-block btn-collections">Découvrir</a>
+      </div>
+      <div class="block-image"><img src="univers/collection.webp" alt="Les collections"></div>
+    </div>
+
+    <!-- Row 5 -->
+    <div class="block-row">
+      <div class="block-image"><img src="univers/emballage.jpg" alt="Emballage cadeaux"></div>
       <div class="block-text text-emballage">
         <h2>Emballage cadeaux</h2>
         <p class="block-desc">Sublimez vos présents avec notre collection d'emballages élégants et raffinés. Des papiers cadeaux, rubans, pochettes et boîtes aux motifs exclusifs pour toutes les occasions.</p>
         <a href="#" class="btn-block btn-emballage">Découvrir</a>
       </div>
-      <div class="block-image"><img src="univers/emballage.jpg" alt="Emballage cadeaux"></div>
     </div>
   </section>
 
@@ -1011,7 +1028,7 @@ footer {
 <footer>
   <div class="footer-top">
     <div class="footer-col footer-logo">
-      <img src="clrh-lg/LOGO-CLAIREFONTAINE-HORIZONTAL-BLEU.webp" alt="Clairefontaine Logo">
+      <img src="clrh-lg/LOGO-CLAIREFONTAINE-WHITE.webp" alt="Clairefontaine Logo">
     </div>
     <div class="footer-col footer-nav">
       <h4 style="margin-bottom: 15px; font-size: 16px;">NOS UNIVERS</h4>
