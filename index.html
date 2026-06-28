@@ -996,6 +996,96 @@
     .btn-blue-solid:hover {
       background-color: var(--dark-blue);
     }
+
+    /* INSPIRER SECTION */
+    .inspirer-section {
+      padding: 60px 40px;
+      text-align: center;
+      background-color: #f9f9f9;
+    }
+
+    .inspirer-title h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 900;
+      font-size: 50px;
+      color: #222;
+      text-transform: uppercase;
+      line-height: 1;
+    }
+
+    .inspirer-title .cursive {
+      font-family: 'Caveat', cursive;
+      font-size: 64px;
+      color: #666;
+      display: block;
+      margin-top: -25px;
+      margin-bottom: 30px;
+    }
+
+    .insta-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      text-align: center;
+    }
+
+    .insta-post {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .insta-img-wrapper {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      height: 250px;
+      margin-bottom: 20px;
+      border-radius: 4px;
+      background: #ddd;
+    }
+
+    .insta-img-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .insta-post:hover .insta-img-wrapper img {
+      transform: scale(1.05);
+    }
+
+    .insta-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      color: #fff;
+      font-size: 36px;
+    }
+
+    .insta-post:hover .insta-overlay {
+      opacity: 1;
+    }
+
+    .insta-post h3 {
+      font-family: 'Caveat', cursive;
+      font-size: 26px;
+      font-weight: 700;
+      text-transform: none;
+      margin-bottom: 15px;
+      min-height: 50px;
+      line-height: 1.2;
+      color: #333;
+    }
   </style>
 </head>
 
@@ -1017,7 +1107,7 @@
       </div>
       <div class="header-center">
         <nav class="main-nav">
-          <a href="#">Papeterie</a>
+          <a href="#">Cahiers scolaire</a>
           <a href="#">Beaux-arts</a>
           <a href="#">Loisirs créatifs</a>
           <a href="../collections-adolie/index.html">Collections</a>
@@ -1031,6 +1121,7 @@
           <a href="#">Contact</a>
         </nav>
         <a href="#" class="icon-circle icon-fr"></a>
+        <a href="#" style="color: #666; font-size: 20px; display: flex; align-items: center; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='var(--primary-blue)'" onmouseout="this.style.color='#666'"><i class="fab fa-instagram"></i></a>
         <div class="search-container">
           <button class="search-btn"><span class="material-symbols-outlined">search</span></button>
         </div>
@@ -1115,6 +1206,43 @@
       </div>
     </section>
 
+    <section class="inspirer-section">
+      <div class="inspirer-title">
+        <h2>Laissez-vous inspirer</h2>
+        <span class="cursive">Sur Instagram</span>
+      </div>
+      <div class="insta-grid">
+        <a href="#" class="insta-post">
+          <div class="insta-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1517842645767-c639042777db?q=80&w=400&auto=format&fit=crop" alt="Instagram Post 1">
+            <div class="insta-overlay"><i class="fab fa-instagram"></i></div>
+          </div>
+          <h3>L'art de l'aquarelle : techniques et astuces pour débuter</h3>
+        </a>
+        <a href="#" class="insta-post">
+          <div class="insta-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?q=80&w=400&auto=format&fit=crop" alt="Instagram Post 2">
+            <div class="insta-overlay"><i class="fab fa-instagram"></i></div>
+          </div>
+          <h3>Les essentiels pour une rentrée bien organisée et stylée</h3>
+        </a>
+        <a href="#" class="insta-post">
+          <div class="insta-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?q=80&w=400&auto=format&fit=crop" alt="Instagram Post 3">
+            <div class="insta-overlay"><i class="fab fa-instagram"></i></div>
+          </div>
+          <h3>Comment choisir son carnet idéal pour le bullet journaling</h3>
+        </a>
+        <a href="#" class="insta-post">
+          <div class="insta-img-wrapper">
+            <img src="https://images.unsplash.com/photo-1544816155-12df9643f363?q=80&w=400&auto=format&fit=crop" alt="Instagram Post 4">
+            <div class="insta-overlay"><i class="fab fa-instagram"></i></div>
+          </div>
+          <h3>Découvrez notre nouvelle collection de carnets éco-responsables</h3>
+        </a>
+      </div>
+    </section>
+
     <section class="actualite-section">
       <div class="actualite-title">
         <h2>TOUTE L'ACTUALITÉ</h2>
@@ -1186,6 +1314,7 @@
     <div class="section-marques-top">
       <div class="footer-box">Historique et patrimoine</div>
       <div class="footer-box">La Qualité Clairefontaine</div>
+      <div class="footer-box">Engagements RSE</div>
       <div class="made-in-france"></div>
     </div>
 
@@ -1239,7 +1368,7 @@
       </div>
       <div class="footer-col footer-nav">
         <h4 style="margin-bottom: 15px; font-size: 16px;">NOS UNIVERS</h4>
-        <a href="#">Papeterie</a>
+        <a href="#">Cahiers scolaire</a>
         <a href="#">Beaux-arts</a>
         <a href="#">Loisirs créatifs</a>
         <a href="../collections-adolie/index.html">Collections</a>
